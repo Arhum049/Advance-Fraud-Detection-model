@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Python virtual environment
+venv/
+.venv/
+env/
+
+# Build outputs
+frontend/build/
+frontend/dist/
+dist/
+build/
+*.egg-info/
+
+# Coverage
+htmlcov/
+.coverage
+*.sav
+*.pyc
+
+**/.env
+**/.env.*
+!**/.env.example
+
+
+# Vite
+.vite/
+frontend/.vite/

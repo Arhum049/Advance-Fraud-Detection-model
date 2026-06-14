@@ -1,0 +1,39 @@
+.feat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.feat-chip {
+  background: var(--color-background-secondary);
+  border-radius: 6px;
+  padding: 6px 8px;
+  border: 0.5px solid var(--color-border-tertiary);
+  transition: all 0.2s ease;
+}
+
+.feat-chip-label {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+}
+
+.feat-chip-val {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 1px;
+  color: var(--color-text-primary);
+}
+
+.feat-chip.highlight {
+  background: var(--color-background-warning);
+  border-color: #F0D395;
+}
+
+.feat-chip.highlight .feat-chip-label {
+  color: #854F0B;
+}
+
+.feat-chip.highlight .feat-chip-val {
+  color: #633806;
+}

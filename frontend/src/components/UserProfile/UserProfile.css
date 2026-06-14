@@ -1,0 +1,50 @@
+.user-toggle {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.utab {
+  flex: 1;
+  padding: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  background: transparent;
+  color: var(--color-text-secondary);
+  transition: all 0.15s;
+  text-align: center;
+}
+
+.utab.on {
+  background: var(--color-background-secondary);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-primary);
+}
+
+.utab:hover:not(.on) {
+  background: var(--color-background-tertiary);
+}
+
+.existing-fields {
+  margin-top: 12px;
+}
+
+.existing-fields.hidden {
+  display: none;
+}
+
+.new-user-note {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  padding: 8px 10px;
+  background: var(--color-background-secondary);
+  border-radius: var(--border-radius-md);
+  margin-bottom: 4px;
+}
+
+.new-user-note.hidden {
+  display: none;
+}

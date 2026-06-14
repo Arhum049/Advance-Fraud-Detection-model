@@ -1,0 +1,59 @@
+.trace {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.trace-step {
+  padding: 9px 12px 9px 28px;
+  border-left: 1.5px solid var(--color-border-tertiary);
+  margin-left: 8px;
+  position: relative;
+  opacity: 0.35;
+  transition: opacity 0.3s;
+}
+
+.trace-step.done {
+  opacity: 1;
+}
+
+.trace-step.active {
+  opacity: 1;
+}
+
+.tdot {
+  position: absolute;
+  left: -6px;
+  top: 13px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-border-secondary);
+  border: 2px solid var(--color-background-primary);
+  transition: background 0.3s;
+}
+
+.trace-step.done .tdot {
+  background: #1D9E75;
+}
+
+.trace-step.active .tdot {
+  background: #378ADD;
+}
+
+.trace-step:last-child {
+  border-left: 1.5px solid transparent;
+}
+
+.tstep-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.tstep-val {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+  font-family: var(--font-mono);
+}

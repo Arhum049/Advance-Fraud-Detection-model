@@ -1,0 +1,77 @@
+.verdict {
+  border-radius: var(--border-radius-lg);
+  padding: 14px 16px;
+  margin-top: 12px;
+  border: 0.5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.verdict.fraud {
+  background: #FCEBEB;
+  border-color: #F09595;
+}
+
+.verdict.safe {
+  background: #EAF3DE;
+  border-color: #C0DD97;
+}
+
+.verdict.idle,
+.verdict.running {
+  background: var(--color-background-secondary);
+  border-color: var(--color-border-tertiary);
+}
+
+.verdict-label {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.verdict.fraud .verdict-label {
+  color: #A32D2D;
+}
+
+.verdict.safe .verdict-label {
+  color: #3B6D11;
+}
+
+.verdict.idle .verdict-label,
+.verdict.running .verdict-label {
+  color: var(--color-text-secondary);
+}
+
+.verdict-sub {
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.verdict.fraud .verdict-sub {
+  color: #791F1F;
+}
+
+.verdict.safe .verdict-sub {
+  color: #27500A;
+}
+
+.verdict.idle .verdict-sub,
+.verdict.running .verdict-sub {
+  color: var(--color-text-tertiary);
+}
+
+.spinner {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid var(--color-border-secondary);
+  border-top-color: var(--color-text-primary);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

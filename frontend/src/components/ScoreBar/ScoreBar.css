@@ -1,0 +1,35 @@
+.score-bar-wrap {
+  margin-top: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.score-bar-bg {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--color-border-tertiary);
+  position: relative;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+}
+
+.score-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+  margin-top: 3px;
+}
+
+.threshold-marker {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1.5px;
+  background: #BA7517;
+}

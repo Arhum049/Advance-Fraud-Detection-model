@@ -1,0 +1,50 @@
+export const USERS = {
+  u001: {
+    customer_id: 1,
+    name: "Alice Chen",
+    avg7: 82,
+    avg30: 91,
+    count: 47,
+    fraud: 0,
+    risk: "low",
+    gender: "F",
+    city: "Phoenix",
+    zip: 85001,
+    city_pop: 1600000,
+    job: "Writer",
+    state: "AZ",
+    dob: "1992-05-20"
+  },
+  u002: {
+    customer_id: 2,
+    name: "Bob Mehra",
+    avg7: 210,
+    avg30: 195,
+    count: 23,
+    fraud: 0,
+    risk: "medium",
+    gender: "M",
+    city: "Dallas",
+    zip: 75201,
+    city_pop: 1300000,
+    job: "Engineer",
+    state: "TX",
+    dob: "1985-08-15"
+  },
+  u003: {
+    customer_id: 3,
+    name: "Carol Das",
+    avg7: 340,
+    avg30: 280,
+    count: 89,
+    fraud: 2,
+    risk: "high",
+    gender: "F",
+    city: "New York",
+    zip: 10001,
+    city_pop: 8400000,
+    job: "Manager",
+    state: "NY",
+    dob: "1976-12-03"
+  }
+};
