@@ -58,7 +58,7 @@ async def root(base: Payload):
     return {
         "prediction": prediction,
         "fraud_probability": fraud_probability,
-        "features": features_dict
+        
     }
 
 @app.get("/get-users")
