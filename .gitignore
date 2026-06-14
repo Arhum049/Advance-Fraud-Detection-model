@@ -28,3 +28,6 @@ htmlcov/
 # Vite
 .vite/
 frontend/.vite/
+
+jupyter_test/fraudTest.csv
+*.csv
