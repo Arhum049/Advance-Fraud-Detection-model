@@ -1,6 +1,6 @@
 import json
 import joblib
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from services.preprocess import preprocess_transaction
@@ -63,15 +63,24 @@ async def root(base: Payload):
 
 @app.get("/get-users")
 async def fetch_users():
-    result = get_users()
-    return result
+    try:
+        result = get_users()
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Database connection error: {str(e)}")
 
 @app.get("/get-states-categories")
 async def fetch_states_categories():
-    result = get_states_and_category()
-    return result
+    try:
+        result = get_states_and_category()
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Database connection error: {str(e)}")
 
 @app.get("/get-cities-jobs")
 async def fetch_cities_jobs():
-    result = get_cities_and_jobs()
-    return result
+    try:
+        result = get_cities_and_jobs()
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Database connection error: {str(e)}")

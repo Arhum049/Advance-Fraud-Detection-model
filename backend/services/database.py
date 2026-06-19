@@ -67,8 +67,7 @@ def get_users() -> list:
 
     except Exception as e:
         print(f"Database Error: {e}")
-
-    return []
+        raise e
 
 
 def get_states_and_category() -> dict:
@@ -95,10 +94,7 @@ def get_states_and_category() -> dict:
 
     except Exception as e:
         print(f"Database Error: {e}")
-        return {
-            "categories": [],
-            "states": []
-        }
+        raise e
 
 def update_customer_stats(customer_id: int, amt: float):
     query = text("""
@@ -112,6 +108,7 @@ def update_customer_stats(customer_id: int, amt: float):
             conn.execute(query, {"customer_id": customer_id, "amt": amt})
     except Exception as e:
         print(f"Database error updating stats: {e}")
+        raise e
 
 def get_cities_and_jobs() -> dict:
     query_city = text("SELECT city_name, city_population from city;")
@@ -130,7 +127,4 @@ def get_cities_and_jobs() -> dict:
             }
     except Exception as e:
         print(f"Database Error: {e}")
-        return {
-            "cities": [],
-            "jobs": []
-        }
+        raise e
