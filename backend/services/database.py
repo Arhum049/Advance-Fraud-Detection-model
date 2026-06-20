@@ -98,7 +98,7 @@ def get_states_and_category() -> dict:
 
 def update_customer_stats(customer_id: int, amt: float):
     query = text("""
-        UPDATE fraud_analytics.customer_stats
+        UPDATE customer_stats
         SET avg_amount = ((avg_amount * txn_count) + :amt) / (txn_count + 1),
             txn_count = txn_count + 1
         WHERE customer_id = :customer_id
