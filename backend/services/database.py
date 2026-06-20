@@ -43,7 +43,7 @@ def get_users() -> list:
 
     query = text("""
         SELECT *
-        FROM fraud_analytics.customer_stats
+        FROM customer_stats
     """)
 
     try:

@@ -84,3 +84,7 @@ async def fetch_cities_jobs():
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Database connection error: {str(e)}")
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
