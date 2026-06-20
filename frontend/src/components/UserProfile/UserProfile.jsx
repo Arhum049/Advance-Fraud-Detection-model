@@ -69,38 +69,30 @@ function UserProfileComponent({
           </select>
         </div>
         
-        <div className="feat-grid">
-          <div className="feat-chip">
-            <div className="feat-chip-label">gender</div>
-            <div className="feat-chip-val">
-              {userData ? userData.gender : "—"}
-            </div>
-          </div>
-          <div className="feat-chip">
-            <div className="feat-chip-label">avg amount</div>
-            <div className="feat-chip-val">
-              {userData ? `$${userData.avg_amount}` : "—"}
-            </div>
-          </div>
-          <div className="feat-chip">
-            <div className="feat-chip-label">date of birth</div>
-            <div className="feat-chip-val">
-              {userData && userData.dob ? userData.dob.split('T')[0] : "—"}
-            </div>
-          </div>
-          <div className="feat-chip">
-            <div className="feat-chip-label">transaction count</div>
-            <div className="feat-chip-val">
-              {userData ? `${userData.txn_count} txns` : "—"}
-            </div>
-          </div>
-          <div className="feat-chip">
-            <div className="feat-chip-label">job</div>
-            <div className="feat-chip-val">
-              {userData && userData.job ? userData.job : "—"}
-            </div>
-          </div>
-        </div>
+        <table className="user-profile-table">
+          <tbody>
+            <tr>
+              <td>gender</td>
+              <td>{userData ? userData.gender : "—"}</td>
+            </tr>
+            <tr>
+              <td>avg amount</td>
+              <td>{userData ? `$${userData.avg_amount}` : "—"}</td>
+            </tr>
+            <tr>
+              <td>date of birth</td>
+              <td>{userData && userData.dob ? userData.dob.split('T')[0] : "—"}</td>
+            </tr>
+            <tr>
+              <td>transaction count</td>
+              <td>{userData ? `${userData.txn_count} txns` : "—"}</td>
+            </tr>
+            <tr>
+              <td>job</td>
+              <td>{userData && userData.job ? userData.job : "—"}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <div className={`new-user-note ${isNew ? "" : "hidden"}`}>

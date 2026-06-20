@@ -1,25 +1,25 @@
 .verdict {
-  border-radius: var(--border-radius-lg);
-  padding: 14px 16px;
-  margin-top: 12px;
-  border: 0.5px solid transparent;
+  border-radius: var(--border-radius-md);
+  padding: 16px 20px;
+  margin-top: 16px;
+  border: 1px solid transparent;
   transition: all 0.3s ease;
 }
 
 .verdict.fraud {
-  background: #FCEBEB;
-  border-color: #F09595;
+  background: #FDF4F4;
+  border-color: #F5B0B0;
 }
 
 .verdict.safe {
-  background: #EAF3DE;
-  border-color: #C0DD97;
+  background: var(--color-background-success);
+  border-color: #D3E5C7;
 }
 
 .verdict.idle,
 .verdict.running {
   background: var(--color-background-secondary);
-  border-color: var(--color-border-tertiary);
+  border-color: var(--color-border-secondary);
 }
 
 .verdict-label {

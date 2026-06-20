@@ -1,16 +1,16 @@
 .history-list {
-  margin-top: 12px;
-  border-top: 0.5px solid var(--color-border-tertiary);
-  padding-top: 10px;
+  margin-top: 16px;
+  border-top: 1px solid var(--color-border-tertiary);
+  padding-top: 16px;
 }
 
 .history-row {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 0;
-  border-bottom: 0.5px solid var(--color-border-tertiary);
-  font-size: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border-tertiary);
+  font-size: 13px;
 }
 
 .history-row:last-child {
@@ -32,7 +32,7 @@
 }
 
 .hbadge.s {
-  background: #EAF3DE;
+  background: var(--color-background-success);
   color: #3B6D11;
 }
 

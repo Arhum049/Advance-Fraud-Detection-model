@@ -6,15 +6,15 @@
 
 .utab {
   flex: 1;
-  padding: 7px;
-  font-size: 12px;
+  padding: 10px;
+  font-size: 13px;
   font-weight: 500;
-  border: 0.5px solid var(--color-border-tertiary);
+  border: 1px solid var(--color-border-tertiary);
   border-radius: var(--border-radius-md);
   cursor: pointer;
   background: transparent;
   color: var(--color-text-secondary);
-  transition: all 0.15s;
+  transition: all 0.2s ease;
   text-align: center;
 }
 
@@ -22,6 +22,7 @@
   background: var(--color-background-secondary);
   color: var(--color-text-primary);
   border-color: var(--color-border-primary);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 .utab:hover:not(.on) {
@@ -29,11 +30,36 @@
 }
 
 .existing-fields {
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .existing-fields.hidden {
   display: none;
+}
+
+.existing-fields .field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-bottom: 6px;
+}
+
+.existing-fields .field select {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border-secondary);
+  border-radius: var(--border-radius-md);
+  background: var(--color-background-secondary);
+  color: var(--color-text-primary);
+  transition: all 0.2s ease;
+}
+
+.existing-fields .field select:focus {
+  outline: none;
+  border-color: var(--color-border-primary);
+  box-shadow: 0 0 0 2px rgba(139, 107, 71, 0.2);
 }
 
 .new-user-note {
@@ -47,4 +73,31 @@
 
 .new-user-note.hidden {
   display: none;
+}
+
+.user-profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.user-profile-table td {
+  padding: 8px 4px;
+  border-bottom: 1px solid var(--color-border-tertiary);
+}
+
+.user-profile-table tr:last-child td {
+  border-bottom: none;
+}
+
+.user-profile-table td:first-child {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  width: 50%;
+}
+
+.user-profile-table td:last-child {
+  color: var(--color-text-primary);
+  text-align: left;
 }

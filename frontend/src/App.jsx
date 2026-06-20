@@ -133,7 +133,7 @@ function App() {
               score={score}
               featureSnapshot={featureSnapshot}
             />
-            <ScoreBar score={score} threshold={0.21} />
+            <ScoreBar score={score} threshold={0.80} />
           </div>
 
           <div className="panel" style={{ marginTop: "12px" }}>
