@@ -41,7 +41,7 @@ function HeaderComponent({ stats }) {
               <h3>3. Inference & Feedback Loop</h3>
               <ul>
                 <li>The transaction payload is sent to the backend and processed into a Pandas DataFrame.</li>
-                <li>The XGBoost model outputs a fraud probability. A threshold of $\ge$ 0.80 classifies it as fraud.</li>
+                <li>The XGBoost model outputs a fraud probability. A threshold of ≥ 0.80 classifies it as fraud.</li>
                 <li><strong>Continuous Learning:</strong> If the transaction is for an existing user, the database is updated (recalculating their <code>avg_amount</code> and <code>txn_count</code>). This feedback loop ensures the profile evolves with every transaction.</li>
               </ul>
 
