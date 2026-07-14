@@ -1,13 +1,17 @@
 import json
 import joblib
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from services.preprocess import preprocess_transaction
 from services.database import get_users, get_states_and_category, update_customer_stats, get_cities_and_jobs
-
+from slowapi import Limiter
+from slowapi.util import get_remote_address
+from slowapi.middleware import SlowAPIMiddleware
+from slowapi.errors import RateLimitExceeded
+from slowapi.extension import _rate_limit_exceeded_handler
 from config import XGBOOST_MODEL_PATH, ALLOWED_ORIGINS
- 
+
 # Load model at startup
 model = joblib.load(XGBOOST_MODEL_PATH)
 
@@ -20,6 +24,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.add_middleware(SlowAPIMiddleware)
+
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
 
 
 class Payload(BaseModel):
@@ -40,7 +49,8 @@ class Payload(BaseModel):
 
 
 @app.post("/predict")
-async def root(base: Payload):
+@limiter.limit("10/minute")
+async def root(request: Request, base: Payload):
     # Preprocess the payload into a Pandas DataFrame
     X = preprocess_transaction(base)
     
@@ -62,7 +72,8 @@ async def root(base: Payload):
     }
 
 @app.get("/get-users")
-async def fetch_users():
+@limiter.limit("10/minute")
+async def fetch_users(request: Request,):
     try:
         result = get_users()
         return result
@@ -70,7 +81,8 @@ async def fetch_users():
         raise HTTPException(status_code=500, detail=f"Database connection error: {str(e)}")
 
 @app.get("/get-states-categories")
-async def fetch_states_categories():
+@limiter.limit("10/minute")
+async def fetch_states_categories(request: Request,):
     try:
         result = get_states_and_category()
         return result
@@ -78,7 +90,8 @@ async def fetch_states_categories():
         raise HTTPException(status_code=500, detail=f"Database connection error: {str(e)}")
 
 @app.get("/get-cities-jobs")
-async def fetch_cities_jobs():
+@limiter.limit("10/minute")
+async def fetch_cities_jobs(request: Request,):
     try:
         result = get_cities_and_jobs()
         return result
@@ -86,5 +99,6 @@ async def fetch_cities_jobs():
         raise HTTPException(status_code=500, detail=f"Database connection error: {str(e)}")
 
 @app.get("/health")
-async def health_check():
+@limiter.limit("10/minute")
+async def health_check(request: Request,):
     return {"status": "ok"}

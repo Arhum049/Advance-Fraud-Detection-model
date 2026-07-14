@@ -32,3 +32,5 @@ typing_extensions==4.15.0
 greenlet==3.5.1
 threadpoolctl==3.6.0
 tzdata==2026.2
+slowapi==0.1.10
+
